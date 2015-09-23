@@ -15,13 +15,13 @@ class MessageViewController: UIViewController {
         
         //划动手势
         //右划
-        var swipeGesture = UISwipeGestureRecognizer(target: self, action: "handleSwipeGesture:")
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: "handleSwipeGesture:")
         self.view.addGestureRecognizer(swipeGesture)
     
         //左侧显示头像
-        var photoView: UIImageView = UIImageView(image: UIImage(named: "AppIcon-160x60@2x.png"))
+        let photoView: UIImageView = UIImageView(image: UIImage(named: "AppIcon-160x60@2x.png"))
         photoView.frame = CGRectMake(0, 0, 30, 30)
-        var photoItem: UIBarButtonItem = UIBarButtonItem(customView: photoView)
+        let photoItem: UIBarButtonItem = UIBarButtonItem(customView: photoView)
         self.navigationItem.leftBarButtonItem = photoItem
         
         //添加点击事件
@@ -35,7 +35,7 @@ class MessageViewController: UIViewController {
         photoView.clipsToBounds = true
         photoView.layer.cornerRadius = photoView.bounds.width*0.5
         //设置titleView为
-        var titleSegment: UISegmentedControl = UISegmentedControl(items: ["消息","电话"])
+        let titleSegment: UISegmentedControl = UISegmentedControl(items: ["消息","电话"])
         titleSegment.selectedSegmentIndex = 0
         self.navigationItem.titleView = titleSegment
     }
@@ -49,19 +49,19 @@ class MessageViewController: UIViewController {
     //手势处理函数
     func showSliderView(sender:UITapGestureRecognizer) {
         NSLog("侧滑视图")
-        var sliderVC: UIViewController! = self.storyboard!.instantiateViewControllerWithIdentifier("SliderViewController") as! UIViewController
+        let sliderVC: UIViewController! = self.storyboard!.instantiateViewControllerWithIdentifier("SliderViewController") 
         self.presentViewController(sliderVC, animated: false, completion: nil)
     }
     
     func handleSwipeGesture(sender:UISwipeGestureRecognizer){
-        var sliderVC: UIViewController! = self.storyboard!.instantiateViewControllerWithIdentifier("SliderViewController") as! UIViewController
+        let sliderVC: UIViewController! = self.storyboard!.instantiateViewControllerWithIdentifier("SliderViewController") 
         
         //划动的方向
-        var direction = sender.direction
+        let direction = sender.direction
         //判断是上下左右
         switch (direction){
         case UISwipeGestureRecognizerDirection.Right:
-            println("Right")
+            print("Right")
             self.presentViewController(sliderVC, animated: false, completion: nil)
             break
         default:

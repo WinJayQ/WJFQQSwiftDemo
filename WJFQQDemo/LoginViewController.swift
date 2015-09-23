@@ -91,7 +91,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
             
         }
         
-        var nowState:Bool = self.listBtn.selected
+        let nowState:Bool = self.listBtn.selected
         if nowState == true{
             self.listBtn.selected = false
         }else{
@@ -102,10 +102,10 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     @IBAction func loginQQFunc(sender: UIButton) {
         if (self.qqNumTextField.text == "123456") && (self.qqPwdTextField.text == "qwert"){
             NSLog("登录成功")
-            var MainVC: UIViewController! = self.storyboard!.instantiateViewControllerWithIdentifier("MainTabViewController") as! UIViewController
+            let MainVC: UIViewController! = self.storyboard!.instantiateViewControllerWithIdentifier("MainTabViewController") 
             self.presentViewController(MainVC, animated: true, completion: nil)
         }else{
-            var alertView: UIAlertView = UIAlertView()
+            let alertView: UIAlertView = UIAlertView()
             alertView.title = "温馨提示"
             alertView.message = "账号：123456  密码：qwert"
             alertView.addButtonWithTitle("知道了")

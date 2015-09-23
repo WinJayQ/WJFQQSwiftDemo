@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         //导航栏
-        var navBar = UINavigationBar.appearance()
+        let navBar = UINavigationBar.appearance()
         //设置导航栏标题颜色
         navBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         //设置导航栏按钮颜色
